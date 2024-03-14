@@ -1,12 +1,11 @@
 import anthropic
 import openai
 
-openai.api_key = "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"
+openai.api_key = "your-api-key"
 
 client = anthropic.Anthropic(
     # defaults to os.environ.get("ANTHROPIC_API_KEY")
-    api_key="sk-ant-api03-8s69j6wlhnFhisMdsyrm43pQnwFM15qNb25YHv8ydvgMMpWw0tyTytdq-"
-            "ZY52u_UcJs-R9LwCqNOf791K_a-8g-X61SywAA",
+    api_key="your-api-key"
 )
 message = client.messages.create(
     model="claude-3-sonnet-20240229",
