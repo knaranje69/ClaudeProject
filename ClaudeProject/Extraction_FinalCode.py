@@ -8,10 +8,10 @@ import fitz
 import anthropic
 
 client = anthropic.Anthropic(
-    api_key="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"
+    api_key="your-api-key"
 )
 
-openai.api_key = "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"
+openai.api_key = "your-api-key"
 
 data_string1 str ="This is the name"
 
