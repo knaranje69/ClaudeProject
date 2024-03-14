@@ -4,7 +4,7 @@ import anthropic
 from Extraction_FinalCode import convert_any_to_string
 
 client = anthropic.Anthropic(
-    api_key= "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"
+    api_key= "your-api-key"
 )
 
 
