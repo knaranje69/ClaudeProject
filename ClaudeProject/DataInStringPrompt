@@ -1,0 +1,46 @@
+import openai
+
+# Configure your OpenAI API key
+api_key = 'your_openai_api_key'
+openai.api_key = api_key
+
+# Data string received from the previous step
+data_string = "Your data string goes here."
+
+# Prompt for the GPT-3 model to generate responses
+prompt = "Provide answers to the following questions:\n1. What is the main idea of the data?\n2. What insights can be derived from the data?\n3. Any recommendations based on the data?\n"
+
+# Call the GPT-3 completion endpoint to generate responses based on the prompt and data string
+response = openai.Completion.create(
+    engine="text-davinci-003",
+    prompt=prompt + data_string,
+    max_tokens=150,  # Specify the maximum number of tokens for the response
+)
+
+# Extract and print the generated response from the GPT-3 model
+generated_response = response.choices[0].text.strip()
+print("Generated Response:")
+print(generated_response)
+
+
+# -----------------------------------------------------------------------------------------------------
+
+message = client.messages.create(
+    model="claude-3-sonnet-20240229",
+    max_tokens=1001,
+    temperature=0.9,
+    system="You are document analyzing assistant",
+    messages=[
+        {
+            "role": "user",
+            "content": [
+                {
+                    "type": "text",
+                    "text": "\nAnalyze the output of the variable provided!\n\n"
+                            "\n\n '''\nHuman: ''' {print(data_string)} '''\n\n'''Summarize the string text provided"
+                }
+            ]
+        }
+    ]
+)
+print(message.content)
